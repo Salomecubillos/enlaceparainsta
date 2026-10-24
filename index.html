@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>conciencia digital | enlaces</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M44 10H14a6 6 0 0 0-6 6v26a6 6 0 0 0 6 6h36a6 6 0 0 0 6-6V24' fill='none' stroke='%231E2A5A' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='54' cy='12' r='6' fill='%235FCFAE'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tinta: #1E2A5A;
+    --tinta-suave: #3A4680;
+    --menta: #5FCFAE;
+    --menta-claro: #DDF5EE;
+    --lila: #CDBEF2;
+    --lila-claro: #F1ECFC;
+    --morado: #6A4FB0;
+    --fondo: #F8F7FC;
+    --superficie: #FFFFFF;
+    --texto: #1E2A5A;
+    --texto-suave: #5A6386;
+    --borde: #E3DFF2;
+    --boton-texto: #FFFFFF;
+    color-scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --fondo: #141A33;
+      --superficie: #1D2546;
+      --texto: #EEF0FA;
+      --texto-suave: #AEB4D2;
+      --borde: #2E3762;
+      --lila-claro: #262C55;
+      --menta-claro: #1B3A3A;
+      --tinta: #EEF0FA;
+      --tinta-suave: #C9CDE6;
+      --boton-texto: #141A33;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --fondo: #141A33;
+    --superficie: #1D2546;
+    --texto: #EEF0FA;
+    --texto-suave: #AEB4D2;
+    --borde: #2E3762;
+    --lila-claro: #262C55;
+    --menta-claro: #1B3A3A;
+    --tinta: #EEF0FA;
+    --tinta-suave: #C9CDE6;
+    --boton-texto: #141A33;
+    color-scheme: dark;
+  }
+  html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 100%;
+  }
+  main {
+    max-width: 440px;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 40px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Encabezado */
+  .marca { text-align: center; margin-bottom: 36px; }
+  .logo { width: 72px; height: 72px; display: block; margin: 0 auto 18px; }
+  .logo .pantalla { stroke: var(--tinta); }
+  .logo .punto { fill: var(--menta); transform-origin: 54px 12px; animation: entra 900ms 200ms cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes entra {
+    from { transform: translate(10px, -10px) scale(.4); opacity: 0; }
+    to { transform: none; opacity: 1; }
+  }
+  h1 {
+    font-family: "Poppins", "Inter", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 10px;
+    color: var(--tinta);
+  }
+  .lema {
+    margin: 0 auto;
+    max-width: 30ch;
+    color: var(--texto-suave);
+    font-size: 15px;
+  }
+
+  /* Enlaces */
+  .enlaces { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .boton {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 16px 18px;
+    border-radius: 14px;
+    border: 1px solid var(--borde);
+    background: var(--superficie);
+    color: var(--texto);
+    font: inherit;
+    font-weight: 500;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 150ms ease, background-color 150ms ease;
+  }
+  .boton:hover { border-color: var(--tinta-suave); }
+  .boton:active:not([aria-disabled="true"]), .recurso:active { transform: scale(.98); }
+  .boton, .recurso { touch-action: manipulation; transition: border-color 150ms ease, background-color 150ms ease, transform 100ms ease; }
+  .boton:focus-visible, .recurso:focus-visible { outline: 3px solid var(--menta); outline-offset: 2px; }
+  .boton .icono {
+    flex: none;
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: grid; place-items: center;
+    background: var(--lila-claro);
+    color: var(--morado);
+  }
+  .boton .icono svg { width: 20px; height: 20px; }
+  .boton .texto { flex: 1; display: flex; flex-direction: column; }
+  .boton .detalle { font-weight: 400; font-size: 14px; color: var(--texto-suave); }
+
+  .boton.principal {
+    background: var(--tinta);
+    border-color: var(--tinta);
+    color: var(--boton-texto);
+  }
+  .boton.principal .detalle { color: inherit; opacity: .75; }
+  .boton.principal .icono { background: var(--menta); color: #1E2A5A; }
+  .boton.principal:hover { background: var(--tinta-suave); border-color: var(--tinta-suave); }
+
+  .boton[aria-disabled="true"] { cursor: default; }
+  .boton[aria-disabled="true"]:hover { border-color: var(--borde); }
+  .pronto {
+    flex: none;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--menta-claro);
+    color: var(--texto);
+  }
+
+  /* Recursos desplegables */
+  .flecha { flex: none; width: 20px; height: 20px; color: var(--texto-suave); transition: transform 200ms ease; }
+  .boton[aria-expanded="true"] .flecha { transform: rotate(180deg); }
+  .panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 250ms ease;
+  }
+  .panel.abierto { grid-template-rows: 1fr; }
+  .panel > div { overflow: hidden; }
+  .panel-interior {
+    margin-top: 8px;
+    padding: 6px;
+    border-radius: 14px;
+    background: var(--lila-claro);
+  }
+  .lista-recursos { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .recurso {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: var(--superficie);
+    color: var(--texto);
+    text-decoration: none;
+  }
+  .recurso .nombre { flex: 1; font-weight: 500; }
+  .recurso .tipo { font-size: 13px; color: var(--texto-suave); }
+  .vacio {
+    margin: 0;
+    padding: 18px 16px;
+    color: var(--texto-suave);
+    font-size: 15px;
+    text-align: center;
+  }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 8px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--texto-suave);
+  }
+
+  /* Celular: navegador interno de Instagram y pantallas angostas */
+  @media (max-width: 480px) {
+    main { padding: 28px 16px 20px; }
+    .marca { margin-bottom: 28px; }
+    .logo { width: 64px; height: 64px; margin-bottom: 14px; }
+    h1 { font-size: 28px; }
+    .lema { font-size: 15px; }
+    .enlaces { gap: 10px; }
+    .boton { min-height: 64px; padding: 14px 16px; font-size: 17px; border-radius: 16px; }
+    .boton .detalle { font-size: 14px; }
+    .boton .icono { width: 40px; height: 40px; border-radius: 12px; }
+    .boton .icono svg { width: 22px; height: 22px; }
+    .recurso { min-height: 52px; padding: 14px; font-size: 16px; }
+    footer { margin-top: 32px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo .punto { animation: none; }
+    .panel, .flecha, .boton { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header class="marca">
+    <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+      <path class="pantalla" d="M44 10H14a6 6 0 0 0-6 6v26a6 6 0 0 0 6 6h36a6 6 0 0 0 6-6V24" fill="none" stroke-width="4.5" stroke-linecap="round"/>
+      <path class="pantalla" d="M24 56h16" fill="none" stroke-width="4.5" stroke-linecap="round"/>
+      <circle class="punto" cx="54" cy="12" r="5.5"/>
+    </svg>
+    <h1>conciencia digital</h1>
+    <p class="lema">Tecnología con propósito. Personas con conciencia.</p>
+  </header>
+
+  <ul class="enlaces">
+    <li>
+      <a class="boton principal" href="https://conciencia-digital.cl/" target="_blank" rel="noopener">
+        <span class="icono" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+        </span>
+        <span class="texto">Sitio web<span class="detalle">Talleres, programas y servicios</span></span>
+      </a>
+    </li>
+
+    <li>
+      <!-- Cuando exista el canal: cambiar este bloque por un <a class="boton" href="URL_DEL_CANAL"> -->
+      <div class="boton" aria-disabled="true">
+        <span class="icono" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg>
+        </span>
+        <span class="texto">Canal de YouTube<span class="detalle">Videos y conversaciones</span></span>
+        <span class="pronto">Muy pronto</span>
+      </div>
+    </li>
+
+    <li>
+      <button class="boton" type="button" aria-expanded="false" aria-controls="panel-recursos" id="btn-recursos">
+        <span class="icono" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>
+        </span>
+        <span class="texto">Recursos para descargar<span class="detalle">Guías y materiales gratuitos</span></span>
+        <svg class="flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="panel" id="panel-recursos" role="region" aria-labelledby="btn-recursos">
+        <div>
+          <div class="panel-interior">
+            <ul class="lista-recursos" id="lista-recursos">
+              <li><a class="recurso" href="https://conciencia-digital.cl/recursos/" target="_blank" rel="noopener"><span class="nombre">Biblioteca de recursos</span><span class="tipo">Sitio web</span></a></li>
+              <!-- Plantilla para cada recurso:
+              <li><a class="recurso" href="URL" target="_blank" rel="noopener"><span class="nombre">Nombre del recurso</span><span class="tipo">PDF</span></a></li>
+              -->
+            </ul>
+            <p class="vacio" id="vacio">Estamos preparando los primeros materiales. Vuelve pronto.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <footer>Conciencia Digital SpA, Chile</footer>
+</main>
+
+<script>
+  (function () {
+    var btn = document.getElementById('btn-recursos');
+    var panel = document.getElementById('panel-recursos');
+    var lista = document.getElementById('lista-recursos');
+    var vacio = document.getElementById('vacio');
+    if (lista.querySelector('li')) vacio.hidden = true;
+    panel.inert = true;
+    btn.addEventListener('click', function () {
+      var abierto = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!abierto));
+      panel.classList.toggle('abierto', !abierto);
+      panel.inert = abierto;
+    });
+  })();
+</script>
+</body>
+</html>
