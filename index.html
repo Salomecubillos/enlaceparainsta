@@ -199,6 +199,44 @@
     text-align: center;
   }
 
+  /* Recurso destacado */
+  .destacado {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    border: 1.5px solid var(--menta);
+    background: var(--menta-claro);
+    color: var(--texto);
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: transform 100ms ease;
+  }
+  .destacado:active { transform: scale(.98); }
+  .destacado:focus-visible { outline: 3px solid var(--morado); outline-offset: 2px; }
+  .carton { flex: none; width: 36px; height: 36px; }
+  .carton-fondo { fill: var(--superficie); }
+  .casilla { fill: var(--lila-claro); }
+  .casilla.marcada { fill: var(--morado); }
+  .casilla.libre { fill: var(--menta); }
+  .destacado-texto { flex: 1; display: flex; flex-direction: column; }
+  .etiqueta {
+    flex: none;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--morado);
+    color: #FFFFFF;
+  }
+  .destacado-titulo { font-weight: 500; }
+  .destacado-detalle { font-size: 14px; color: var(--texto-suave); }
+  @media (max-width: 480px) {
+    .destacado { min-height: 64px; padding: 14px 16px; font-size: 17px; border-radius: 16px; margin-bottom: 10px; }
+    .carton { width: 40px; height: 40px; }
+  }
+
   footer {
     margin-top: 40px;
     padding-top: 8px;
@@ -240,6 +278,26 @@
     <h1>conciencia digital</h1>
     <p class="lema">Tecnología con propósito. Personas con conciencia.</p>
   </header>
+
+  <a class="destacado" href="https://salomecubillos.github.io/creadordebingo/" target="_blank" rel="noopener">
+    <svg class="carton" viewBox="0 0 60 60" aria-hidden="true">
+      <rect x="2" y="2" width="56" height="56" rx="10" class="carton-fondo"/>
+      <rect x="9" y="9" width="12" height="12" rx="3" class="casilla"/>
+      <rect x="24" y="9" width="12" height="12" rx="3" class="casilla marcada"/>
+      <rect x="39" y="9" width="12" height="12" rx="3" class="casilla"/>
+      <rect x="9" y="24" width="12" height="12" rx="3" class="casilla"/>
+      <rect x="24" y="24" width="12" height="12" rx="3" class="casilla libre"/>
+      <rect x="39" y="24" width="12" height="12" rx="3" class="casilla marcada"/>
+      <rect x="9" y="39" width="12" height="12" rx="3" class="casilla marcada"/>
+      <rect x="24" y="39" width="12" height="12" rx="3" class="casilla"/>
+      <rect x="39" y="39" width="12" height="12" rx="3" class="casilla"/>
+    </svg>
+    <span class="destacado-texto">
+      <span class="destacado-titulo">Generador de bingos</span>
+      <span class="destacado-detalle">Arma cartones con tus imágenes</span>
+    </span>
+    <span class="etiqueta">Nuevo</span>
+  </a>
 
   <ul class="enlaces">
     <li>
